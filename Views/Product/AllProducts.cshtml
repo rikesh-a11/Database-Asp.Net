@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ADOProductCURD2.Models.Product>
+
+@{
+    ViewData["Title"] = "AllProducts";
+}
+
+<h1>AllProducts</h1>
+
+<p>
+    <a asp-action="CreateProduct">Create New Product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>PRODUCT ID</th>
+            <th>PRODUCT NAME</th>
+            <th>PRICE</th>
+            <th>DESCRIPTION</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var P in Model) {
+        <tr>
+                <td>@P.Id </td>
+                <td> @P.Name </td>                
+                <td>@P.price </td>
+                <td>@P.Description </td>
+                <td>
+                    <a asp-action="ProductDetail" asp-route-id= "@P.Id"> View </a>
+                   || <a asp-action="EditProduct" asp-route-id= "@P.Id" > Edit </a>
+                    || <a asp-action="DeleteProduct" asp-route-id="@P.Id" >Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

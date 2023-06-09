@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ADOProductCURD2.props" />
+</Project>

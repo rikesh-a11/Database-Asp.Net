@@ -1,0 +1,46 @@
+﻿@model ADOProductCURD2.Models.Product
+
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+
+<h1>ProductDetail</h1>
+
+<div>
+    <h4>Product</h4>
+    <h5>ID @Model.Id</h5>
+    <h5>Name @Model.Name</h5>
+    <h5>Price @Model.price</h5>
+    <h5>Description @Model.Description</h5>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="AllProducts">Back to List</a>
+</div>
